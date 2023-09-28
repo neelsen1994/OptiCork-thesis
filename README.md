@@ -2,8 +2,8 @@
 
 ## :bookmark_tabs: About OptiCork: A Segmentation-Based Computer Vision Approach for Detecting Anomalies on Cork Disk Surfaces
 
-* This thesis introduces an innovative approach to automate the identification and prediction of anomalies on cork disk surfaces for quality inspection.
-
+* This work introduces an innovative approach to automate the identification and prediction of anomalies on cork disk surfaces for quality inspection.
+* Developed as part of my Master's Thesis, in the Computer Vision and Image Processing Group at the University of Freiburg. 
 * Leveraging Convolutional Neural Networks, specifically U-Net and Mask R-CNN, a robust image processing pipeline is developed.
 
 ![Image Processing Pipeline Visualization](Resources/pipeline.PNG)
@@ -14,7 +14,7 @@
 
 ## :open_file_folder: What's in this repo
 
-* C++ source code of Patchwork++ ([patchworkpp][sourcecodelink])
+* Python source code of Mask RCNN TF2, U-Net
 * Python binding of Patchwork++ using pybind11 ([python_wrapper][wraplink])
 * Examples codes, which visualizes a ground segmentation result by Patchwork++ ([examples][examplelink]) :thumbsup:
 
