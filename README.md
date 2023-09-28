@@ -2,22 +2,15 @@
 
 ## :bookmark_tabs: About OptiCork: A Segmentation-Based Computer Vision Approach for Detecting Anomalies on Cork Disk Surfaces
 
-* A fast, robust, and self-adaptive **ground segmentation algorithm** on 3D point cloud.
+* This thesis introduces an innovative approach to automate the identification and prediction of anomalies on cork disk surfaces for quality inspection.
+
+* Leveraging Convolutional Neural Networks, specifically U-Net and Mask R-CNN, a robust image processing pipeline is developed.
 
 ![Image Processing Pipeline Visualization](Resources/pipeline.PNG)
 
-* An extension of [Patchwork][patchworklink] (RA-L'21 with IROS'21).
-* Please refer our [paper][patchworkppIEEElink] for detailed explanantions and experimental results!
-
-   * Validated on [SemanticKITTI][SemanticKITTIlink] dataset. The benchmark code is available on [here][benchmarklink].
-
-* :bulb: Contents: [YouTube][YouTubeLink], [arXiv][arXivlink], [IEEE *Xplore*][patchworkppIEEElink]
-
-[YouTubeLInk]: https://www.youtube.com/watch?v=fogCM159GRk
-[arXivlink]: https://arxiv.org/abs/2207.11919
-[patchworklink]: https://github.com/LimHyungTae/patchwork
-[SemanticKITTIlink]: http://www.semantic-kitti.org/
-[benchmarklink]: https://github.com/url-kaist/Ground-Segmentation-Benchmark
+* Images from a high-resolution camera are analyzed in real-time, detecting defects with high precision.
+* The unique strength of each model is harnessed through a weighted average ensemble method, resulting in superior performance compared to individual models.
+* Please refer to the [thesis report](Literature/Debayan_sen_thesis.pdf) for detailed explanantions and experimental results!
 
 ## :open_file_folder: What's in this repo
 
