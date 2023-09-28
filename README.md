@@ -14,82 +14,41 @@
 
 ## :open_file_folder: What's in this repo
 
-* Python source code of Mask RCNN TF2, U-Net
-* Python binding of Patchwork++ using pybind11 ([python_wrapper][wraplink])
-* Examples codes, which visualizes a ground segmentation result by Patchwork++ ([examples][examplelink]) :thumbsup:
+* Python source code of Mask RCNN TF2, Mobile Mask RCNN, U-Net, KMeans Clustering, EfficientNet for Classification, and some other segmentation models for semantic segmentation.
+* Source code for the Ensemble approach to combine multiple models for better predictions.
+* Plots explaining the training performance.
+* Examples codes in Jupyter Notebook to implement the above models and visualize the results.
 
-> If you are familiar with ROS, you can also visit [here][roslink] and try executing ROS-based Patchwork++!
+## Installation
 
-[roslink]: https://github.com/url-kaist/patchwork-plusplus-ros
+1. Clone this repository.
 
-[sourcecodelink]: https://github.com/url-kaist/patchwork-plusplus/tree/master/patchworkpp
-[pybind11link]: https://github.com/pybind/pybind11
-[wraplink]: https://github.com/url-kaist/patchwork-plusplus/tree/master/python_wrapper
-[examplelink]: https://github.com/url-kaist/patchwork-plusplus/tree/master/examples
+2. Build and run the docker. The given Dockerfile builds an image to run Jupyter notebook with Keras and other dependencies required for the task of segmentation.
 
-## :package: Prerequisite packages
-> You may need to install Eigen, numpy, and Open3D. Open3D is used for point cloud visualization.
+    ``` 
+    $ cd keras_docker 
 
-```bash
-# To install Eigen and numpy
-$ sudo apt-get install libeigen3-dev
-$ pip install numpy
+    $ docker build -t <dfile_image_name> .
 
-# To install Open3D Python packages
-$ pip install open3d
-
-# To install Open3D C++ packages
-$ git clone https://github.com/isl-org/Open3D
-$ cd Open3D
-$ util/install_deps_ubuntu.sh # Only needed for Ubuntu
-$ mkdir build && cd build
-$ cmake ..
-$ make
-$ sudo make install
-```
-
-## :gear: How to build
-> Please follow below codes to build Patchwork++.
-
-```bash
-$ git clone https://github.com/url-kaist/patchwork-plusplus
-$ cd patchwork-plusplus
-$ mkdir build && cd build
-$ cmake ..
-$ make
-```
-
-## :runner: To run the demo codes
-> There are some example codes for your convenience!
-> Please try using Patchwork++ to segment ground points in a 3D point cloud :smiley:
-
-### Python
-```bash
-# Run patchwork++ and visualize ground points(green) and nonground points(red)
-$ python examples/python/demo_visualize.py
-
-# Run patchwork++ with sequential point cloud inputs 
-$ python examples/python/demo_sequential.py
-```
-
-### C++
-```bash
-# Run patchwork++ and visualize ground points(green) and nonground points(red)
-$ ./build/examples/cpp/demo_visualize
-
-# Run patchwork++ with sequential point cloud inputs 
-$ ./build/examples/cpp/demo_sequential
-
-# Run patchwork++ with your point cloud file, example here
-$ ./build/examples/cpp/demo_visualize ./data/000000.bin # specify file path
-```
+    $ docker run --rm -it --gpus all -p 8888:8888 -p 6006:6006 \
+    --name jupyter_${USER} --user $(id -u ${USER}):$(id -g ${USER}) \
+    -v $PWD:/tf/notebooks/home -v /mnt/hdd_1:/tf/notebooks/hdd_1 <dfile_image_name>
+    ```
+ 3. Some other useful commands to work with Docker:
+    ```
+    docker ps -a                     //To see the status of docker processes
+    docker images                    //To see the list of available docker images 
+    docker stop <docker_name>        //To stop a docker process
+    docker rmi <docker_image_name>   //To remove an image from the local system
+    ``` 
+ 
+ 
+ 4. The segmentation can be performed with Mask R-CNN, U-Net or Ensemble learning method. All the steps to run the segmentation models are implemented in a Jupyter notebook present in the respective folders.
 
 ### Demo Result
-If you execute Patchwork++ with given demo codes well, you can get the following result!
+An example of a prediction obtained from weighted average ensemble of U-Net and Mask R-CNN models. In the Figure, true positives are marked by green and false positives are marked by red.
 
-It is a ground segmentation result of data/000000.bin file using Open3D visualization. (Ground : Green, Nonground : Red)
-
-![Open3D Visualization of "data/000000.bin"](pictures/demo_000000.png)
+![Ensemble Prediction](Resources/ensemble.PNG)
 
 ## :pencil: Citation
 If you use our codes, please cite our paper ([arXiv][arXivLink], [IEEE *Xplore*][patchworkppIEEElink])
