@@ -19,11 +19,11 @@
 * Plots explaining the training performance.
 * Examples codes in Jupyter Notebook to implement the above models and visualize the results.
 
-## Installation
+## 🏗️ Installation
 
 1. Clone this repository.
 
-2. Build and run the docker. The given Dockerfile builds an image to run Jupyter notebook with Keras and other dependencies required for the task of segmentation.
+2. Build and run the docker. The given Dockerfile builds an image to run Jupyter Notebook with Keras and other dependencies required for the task of segmentation.
 
     ``` 
     $ cd keras_docker 
@@ -45,7 +45,7 @@
  
  4. The segmentation can be performed with Mask R-CNN, U-Net or Ensemble learning method. All the steps to run the segmentation models are implemented in a Jupyter notebook present in the respective folders.
 
-### Demo Result
+## 🔡 Demo Result
 An example of a prediction obtained from a weighted average ensemble of U-Net and Mask R-CNN models. In the figure, true positives are marked in green, and false positives are marked in red.
 
 ![Ensemble Prediction](Resources/ensemble.PNG)
