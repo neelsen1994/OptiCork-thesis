@@ -14,7 +14,7 @@
 
 ## :open_file_folder: What's in this repo
 
-* Python source code of Mask RCNN TF2, Mobile Mask RCNN, U-Net, KMeans Clustering, EfficientNet for Classification, and some other segmentation models for semantic segmentation.
+* Python source code of Mask RCNN in Tensorflow 2.x, Mobile Mask RCNN, U-Net, KMeans Clustering, EfficientNet for Classification, and some other segmentation models for semantic segmentation.
 * Source code for the Ensemble approach to combine multiple models for better predictions.
 * Plots explaining the training performance.
 * Examples codes in Jupyter Notebook to implement the above models and visualize the results.
